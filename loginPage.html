@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTalk - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark">
+    <div class="d-flex justify-content-center align-items-center vh-auto">
+
+        <!-- Login form -->
+        <form id="frmLogIn" class="card col-12 col-md-6 col-lg-4 mt-4 mb-4 bg-light">
+            <div class="card-body">
+                <h1 class="text-center mb-0 text-primary">TechTalk</h1>
+
+                <!-- Placeholeder Image -->
+                <div class="d-flex justify-content-center">
+                    <img src="images/mouse.png" alt="Curious Mouse Image" style="max-width: 80%;">
+                </div>
+
+                <h2 class="text-center mb-0 text-primary"> Login</h2>
+
+                <!-- Take in user input for login -->
+                <hr />
+                <label for="txtUesrname" class="mb-1">Username:</label>
+                <input id="txtUsername" class="form-control mb-3" type="text" placeholder="jdoe42" aria-label="Input for username"></input>
+                <label for="txtPassword" class="mb-1">Password:</label>
+                <input id="txtPassword" class="form-control mb-3" type="password" placeholder="Password" aria-label="Input for password"></input>
+
+                <!-- Buttons for login and swich to registration form -->
+                <hr />
+                <button id="btnLogIn" class="btn btn-primary col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-1" type="button">Log In</button>
+                <label for="btnSwapRegister" class="d-flex justify-content-center align-items-center mt-3">Dont have an account?<button id="btnSwapRegister" class="btn btn-link" type="button">Register Now</button></label>
+            </div>
+        </form>
+
+        <!-- Registration Form -->
+        <form id="frmRegistration" class="card col-12 col-md-6 col-lg-4 mt-4 mb-4 bg-light" style="display:none;">
+        </form>
+
+    </div>
+</body>
+</html>
