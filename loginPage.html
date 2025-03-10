@@ -31,13 +31,61 @@
                 <!-- Buttons for login and swich to registration form -->
                 <hr />
                 <button id="btnLogIn" class="btn btn-primary col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-1" type="button">Log In</button>
-                <label for="btnSwapRegister" class="d-flex justify-content-center align-items-center mt-3">Dont have an account?<button id="btnSwapRegister" class="btn btn-link" type="button">Register Now</button></label>
+                <label for="btnSwapRegister" class="d-flex justify-content-center align-items-center mt-3">Don't have an account?<button id="btnSwapRegister" class="btn btn-link" type="button">Register Now</button></label>
             </div>
         </form>
+
 
         <!-- Registration Form -->
         <form id="frmRegistration" class="card col-12 col-md-6 col-lg-4 mt-4 mb-4 bg-light" style="display:none;">
         </form>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+
+        // Vanilla JS w/ query selector
+        document.querySelector("#btnLogIn").addEventListener("click",(e) => {
+            //alert("Test");
+            const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+            let strUsername = document.querySelector("#txtUsername").value
+            const strPassword = $('#txtPassword').val()
+            strUsername = strUsername.toLowerCase()
+            let blnError = false
+            let strMessage = ''
+
+            if(!regEmail.test(strUsername)){
+                blnError = true
+                strMessage += '<p  class="mb-0 mt-0">Username must be an email address</p>'
+            }
+            if(strPassword.length < 1){
+                blnError = true
+                strMessage += '<p class="mb-0 mt-0">Password cannot be blank</p>'
+            }
+
+            if (blnError) {
+            Swal.fire({
+            title: "Oh no, you have an error!",
+            html: strMessage,
+            icon: "error",
+            });
+            } else {
+            Swal.fire({
+            title: "Login Successful!",
+            text: "Welcome back!",
+            icon: "success",
+            });
+            }
+        })
+        // jQuery handler for btnSwapLogin
+        $('#btnSwapRegister').on('click',function(){
+            $('#frmLogIn').slideUp('slow')
+            $('#frmRegistration').slideDown('fast')
+        })
+    </script>
+
+
 
     </div>
 </body>
