@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTalk</title>
+    <link rel="icon" type="image/png" href="images/TechTalkIcon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/solar/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.side {
+    padding: 10px;
+    float: left;
+    width: 20%;
+}
+.mid {
+    padding: 5px;
+    float: left;
+    width: 60%;
+}
+.middle {
+    padding: 10px;
+    float: left;
+    width: 100%;
+}
+@media screen and (max-width: 1000px) {
+    .side, .mid, .half {
+      width: 100%;
+    }
+}
+</style>
+<body class="bg-dark">
+
+    <!-- Create the header for the landing page -->
+    <div class="header">
+        <div class="side">
+            <img src="images/TechTalkIcon.png" alt="TechTalk Icon" class="mt-1"  style="width:125px; height:75px; display: block; margin-left: auto; margin-right: auto;">
+        </div>
+          
+        <div class="mid">
+            <h1 class="text-primary" style="font-size: 70px; text-align: center;"><b>TechTalk</b></h1>
+        </div>
+          
+        <div class="side">
+            <button id="btnRegister" class="btn btn-secondary col-5 offset-1 mt-3" type="button">Register</button>
+            <button id="btnLogin" class="btn btn-secondary col-5 mt-3" type="button">Log In</button>
+        </div>
+    </div>
+
+    <!-- Create a form for site information -->
+    <div class="middle d-flex justify-content-center vh-auto">
+        <form class="card col-10 bg-light mb-1">
+            <div class="card-body">
+
+                <!-- General site information -->
+                <div class="row">
+                    <div class="col center">
+                        <h1 class="text-info" style="font-size: 40px;">Enroll or create a class for anonymous feedback</h1>
+                        <p class="text-secondary"  style="font-size: 20px;">Leave feedback for students or classmates on their progress. Convenient and easy way to create teams, leave reviews, and access reports.</p>
+                    </div>
+                    <div class="col">
+                        <img src="images/ManandComputer.JPG" alt="Man sitting at computer smiling"  style="max-height:425px; width:100%; min-width:225px; display: block; margin-left: auto; margin-right: auto;">
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+
+                    <!-- Information on instructor experience -->
+                    <div class="col mb-2">
+                        <div class="card custom" style="background-color:rgba(255, 190, 255, 0.624); border: none;">
+                            <h1 class="text-center" style="font-size: 40px; color:black">Instructor Experience</h1>
+                            <ul class="text-secondary"  style="font-size: 20px;">
+                                <li>Create courses</li>
+                                <li>Load students into courses or generate a code to allow students to enroll</li>
+                                <li>Create teams</li>
+                                <li>Create and schedule reviews</li>
+                                <li>Review and get reports</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Information on student experience -->
+                    <div class="col mb-2">
+                        <div class="card custom" style="background-color:rgba(253, 236, 182, 0.698); border: none;">
+                            <h1 class="text-center" style="font-size: 40px; color:black">Student Experience</h1>
+                            <ul class="text-secondary"  style="font-size: 20px;">
+                                <li>Enroll or enter a code to access a course</li>
+                                <li>Leave private or public reviews</li>
+                                <li>Complete pending reviews</li>
+                                <li>Review scores</li>
+                                <li>Review feedback from peers</li>
+                                <li>Review and get reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+<!-- ManandComputer image was generated with Microsoft Copilot -->

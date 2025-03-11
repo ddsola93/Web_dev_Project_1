@@ -4,29 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechTalk - Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/TechTalkIcon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/solar/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body class="bg-dark">
-    <div class="d-flex justify-content-center align-items-center vh-auto">
+    <div class="d-flex justify-content-center align-items-center vh-100">
 
         <!-- Login form -->
-        <form id="frmLogIn" class="card col-12 col-md-6 col-lg-4 mt-4 mb-4 bg-light">
+        <form id="frmLogIn" class="card col-12 col-md-6 col-lg-4 bg-light">
             <div class="card-body">
-                <h1 class="text-center mb-0 text-primary">TechTalk</h1>
 
-                <!-- Placeholeder Image -->
+                <!-- Intro of login form -->
                 <div class="d-flex justify-content-center">
-                    <img src="images/mouse.png" alt="Curious Mouse Image" style="max-width: 80%;">
+                    <img src="images/TechTalkIcon.png" alt="TechTalk Logo" style="max-width: 50%;">
                 </div>
-
-                <h2 class="text-center mb-0 text-primary"> Login</h2>
+                <h2 class="text-center mb-0 text-primary" style="font-size: 40px;"> Login</h2>
 
                 <!-- Take in user input for login -->
                 <hr />
-                <label for="txtUesrname" class="mb-1">Username:</label>
-                <input id="txtUsername" class="form-control mb-3" type="text" placeholder="jdoe42" aria-label="Input for username"></input>
-                <label for="txtPassword" class="mb-1">Password:</label>
-                <input id="txtPassword" class="form-control mb-3" type="password" placeholder="Password" aria-label="Input for password"></input>
+                <label for="txtUesrname" class="mb-1">Email: <i class="bi bi-asterisk" style="color:red; font-size: 13px;"></i></label>
+                <input id="txtUsername" class="form-control mb-3" type="text" placeholder="jdoe42@tntech.edu" aria-label="Input for username" required></input>
+                <label for="txtPassword" class="mb-1">Password: <i class="bi bi-asterisk" style="color:red; font-size: 13px;"></i></label>
+                <input id="txtPassword" class="form-control" type="password" placeholder="Password" aria-label="Input for password" required></input>
+                <button id="btnForgotPassword" class="btn btn-link" type="button"><u>Forgot Password?</u></button>
 
                 <!-- Buttons for login and swich to registration form -->
                 <hr />
@@ -35,85 +36,10 @@
             </div>
         </form>
 
-
         <!-- Registration Form -->
         <form id="frmRegistration" class="card col-12 col-md-6 col-lg-4 mt-4 mb-4 bg-light" style="display:none;">
-            <div class="card-body">
-                <h1 class="text-center mb-0 text-primary">TechTalk</h1>
-                <div class="d-flex justify-content-center">
-                    <img src="images/mouse.png" alt="cute mouse" style="max-width: 80%;">
-                </div>
-                <h3 class="text-center mb-4">TechTalk Registration</h3>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" placeholder ='Johndoe@email.com' name="email" aria-email />
-                </div>
-                <div class="form-group ">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder ='Password' pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$" 
-                    title="Password must contain at least one number, one alphabet, one symbol, and be at 
-                    least 8 characters long" aria-label="password" />
-                </div>
-                <div class="form-group ">                    
-                    <label for="repassword">Re-type Password:</label>
-                    <input type="password" class="form-control" id="repassword" name="repassword" placeholder = "Retype password" aria-label="Retype password" />
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="first-name">First Name</label>
-                        <input type="text" class="form-control" id="first-name" placeholder="First Name" name="first-name" aria-label="First Name" />
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="last-name">Last Name</label>
-                        <input type="text" class="form-control" id="last-name" placeholder="Last Name" name="last-name" aria-label="Last Name" />
-                    </div>
-                    
         </form>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-
-        // Vanilla JS w/ query selector
-        document.querySelector("#btnLogIn").addEventListener("click",(e) => {
-            //alert("Test");
-            const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-            let strUsername = document.querySelector("#txtUsername").value
-            const strPassword = $('#txtPassword').val()
-            strUsername = strUsername.toLowerCase()
-            let blnError = false
-            let strMessage = ''
-
-            if(!regEmail.test(strUsername)){
-                blnError = true
-                strMessage += '<p  class="mb-0 mt-0">Username must be an email address</p>'
-            }
-            if(strPassword.length < 1){
-                blnError = true
-                strMessage += '<p class="mb-0 mt-0">Password cannot be blank</p>'
-            }
-
-            if (blnError) {
-            Swal.fire({
-            title: "Oh no, you have an error!",
-            html: strMessage,
-            icon: "error",
-            });
-            } else {
-            Swal.fire({
-            title: "Login Successful!",
-            text: "Welcome back!",
-            icon: "success",
-            });
-            }
-        })
-        // jQuery handler for btnSwapLogin
-        $('#btnSwapRegister').on('click',function(){
-            $('#frmLogIn').slideUp('slow')
-            $('#frmRegistration').slideDown('fast')
-        })
-    </script>
-
+    </div>
 </body>
 </html>
