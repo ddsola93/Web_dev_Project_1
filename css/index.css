@@ -1,0 +1,25 @@
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.side {
+    padding: 10px;
+    float: left;
+    width: 20%;
+}
+.mid {
+    padding: 5px;
+    float: left;
+    width: 60%;
+}
+.middle {
+    padding: 10px;
+    float: left;
+    width: 100%;
+}
+@media screen and (max-width: 1000px) {
+    .side, .mid, .half {
+      width: 100%;
+    }
+}
