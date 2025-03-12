@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="en">
@@ -111,3 +112,48 @@
 
     </script>
 
+=======
+document.getElementById("frmRegister").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let firstName = document.getElementById("first-name").value;
+    let middleName = document.getElementById("middle-name").value;
+    let lastName = document.getElementById("last-name").value;
+    let streetAddress1 = document.getElementById("street-address1").value;
+    let city = document.getElementById("city").value;
+    let state = document.getElementById("state").value;
+    let zip = document.getElementById("zip").value;
+    let phone = document.getElementById("mobile-phone").value;
+
+
+    if (!email || !password || !firstName || !lastName || !streetAddress1 || !city || !state || !zip || !phone) {
+        Swal.fire({
+            icon: 'Error',
+            title: 'Oops...',
+            text: 'Please fill out all / fields!',
+        });
+        return;
+    }
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Welcome back!',
+            text: 'Login successful!',
+        }).then(() => {
+        // Refresh the page after the success message is displayed
+        location.reload();
+    });
+        
+}) 
+
+// Would not work for me, why not ??
+// // jQuery handler for btnSwapLogin
+//     $('#btnSwapLogin').on('click',function(){
+//         $('#frmLogin').slideUp('slow')
+//         $('#frmRegister').slideDown('fast')
+//     })
+        
+</script>
+>>>>>>> 0406aeff8da20c5746e806afaa8f0f8a3ca53399
