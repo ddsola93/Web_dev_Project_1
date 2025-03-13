@@ -1,10 +1,16 @@
 <div id="divLogin" class="d-flex justify-content-center align-items-center vh-100" style="display: none;;">
 
     <!-- Login form -->
-    <form  class="card col-12 col-md-8 col-lg-8 bg-light">
+    <form  class="card col-12 bg-light">
         <div class="card-body">
 
             <!-- Intro of login form -->
+
+            <!-- Close button to return to landing page (Update so it actually works later) -->
+            <!-- <div align="right">
+                <button id="btnSwapLanding" class="btn btn-outline-secondary" style=" border: none;" type="button">X Close</button>
+            </div> -->
+            
             <div class="d-flex justify-content-center">
                 <img src="images/TechTalkIcon.png" alt="TechTalk Logo" style="max-width: 50%;">
             </div>
@@ -12,15 +18,15 @@
 
             <!-- Take in user input for login -->
             <hr />
-            <label for="txtUesrname" class="mb-1">Email: <i class="bi bi-asterisk" style="color:red; font-size: 13px;"></i></label>
-            <input id="txtUsername" class="form-control mb-3" type="text" placeholder="jdoe42@tntech.edu" aria-label="Input for username" required></input>
+            <label for="txtEmail" class="mb-1">Email: <i class="bi bi-asterisk" style="color:red; font-size: 13px;"></i></label>
+            <input id="txtEmail" class="form-control mb-3" type="text" placeholder="jdoe42@tntech.edu" aria-label="Input for email" required></input>
             <label for="txtPassword" class="mb-1">Password: <i class="bi bi-asterisk" style="color:red; font-size: 13px;"></i></label>
             <input id="txtPassword" class="form-control" type="password" placeholder="Password" aria-label="Input for password" required></input>
             <button id="btnForgotPassword" class="btn btn-link" type="button"><u>Forgot Password?</u></button>
 
             <!-- Buttons for login and swich to registration form -->
             <hr />
-            <button id="btnLogIn" class="btn btn-primary col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-1" type="button">Log In</button>
+            <button id="btnLogIn" class="btn btn-secondary col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-1" type="button">Log In</button>
             <label for="btnSwapRegister" class="d-flex justify-content-center align-items-center mt-3">Don't have an account?<button id="btnSwapRegister" class="btn btn-link" type="button">Register Now</button></label>
         </div>
     </form>

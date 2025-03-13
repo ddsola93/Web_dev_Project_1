@@ -3,7 +3,7 @@ document.querySelector('#btnLogin').addEventListener('click', (event) => {
     .then(response => response.text())
     .then(html => {
         const objScript = document.createElement('script');
-        // objScript.src = 'js/login.js'; 
+        objScript.src = 'js/login.js'; 
         objScript.type = 'text/javascript';
         document.head.appendChild(objScript);
         document.querySelector('#divLandingPage').innerHTML += html;
@@ -26,7 +26,7 @@ document.querySelector('#btnRegister').addEventListener('click', (event) => {
         document.querySelector('#divLandingPage').innerHTML += html;
         document.querySelector('#headerLanding').style.display = 'none';
         document.querySelector('#frmLandingPage').style.display = 'none';
-        document.querySelector('#frmRegister').style.display = 'block';
+        document.querySelector('#divLogin').style.display = 'block';
        
     })
     .catch(error => console.error("Error fetching chart:", error));
