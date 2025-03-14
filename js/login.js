@@ -1,6 +1,3 @@
-// Regular expression for valid email format
-const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-
 // // Switches to landing form when btnSwapLanding is clicked (Update so it actually works later)
 // document.querySelector('#btnSwapLanding').addEventListener('click', (event) => {
 //     fetch("index.html")
@@ -28,6 +25,9 @@ document.querySelector("#btnForgotPassword").addEventListener("click",(e) => {
 
 // Email and password validation for when btnLogin is clicked
 document.querySelector("#btnLogIn").addEventListener("click",(e) => {
+    // Regular expression for valid email format
+    const regEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+
 
     // Grabs the values inputed by the user
     let strEmail = document.querySelector("#txtEmail").value
@@ -69,11 +69,11 @@ document.querySelector("#btnLogIn").addEventListener("click",(e) => {
 
 // Switches to registration form when btnSwapRegister is clicked
 document.querySelector('#btnSwapRegister').addEventListener('click', (event) => {
-    fetch("components/Registration_1.html")
+    fetch("components/registration.html")
     .then(response => response.text())
     .then(html => {
         const objScript = document.createElement('script');
-        // objScript.src = 'js/registration.js'; 
+        objScript.src = 'js/registration.js'; 
         objScript.type = 'text/javascript';
         document.head.appendChild(objScript);
         document.querySelector('#divLandingPage').innerHTML = '';

@@ -16,17 +16,17 @@ document.querySelector('#btnLogin').addEventListener('click', (event) => {
 });
 
 document.querySelector('#btnRegister').addEventListener('click', (event) => {
-    fetch("components/Registration_1.html")
+    fetch("components/registration.html")
     .then(response => response.text())
     .then(html => {
         const objScript = document.createElement('script');
-        // objScript.src = 'js/registration.js'; 
+        objScript.src = 'js/registration.js'; 
         objScript.type = 'text/javascript';
         document.head.appendChild(objScript);
         document.querySelector('#divLandingPage').innerHTML += html;
         document.querySelector('#headerLanding').style.display = 'none';
         document.querySelector('#frmLandingPage').style.display = 'none';
-        document.querySelector('#divLogin').style.display = 'block';
+        document.querySelector('#divRegistration').style.display = 'block';
        
     })
     .catch(error => console.error("Error fetching chart:", error));
