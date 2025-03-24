@@ -1,3 +1,4 @@
+
 // // Switches to landing form when btnSwapLanding is clicked (Update so it actually works later)
 // document.querySelector('#btnSwapLanding').addEventListener('click', (event) => {
 //     fetch("index.html")
@@ -57,7 +58,7 @@ document.querySelector("#btnLogIn").addEventListener("click",(e) => {
         });
     }
 
-    // Confirms that the user logedin sucessfully
+    // Confirms that the user loggedin sucessfully
     else{
         Swal.fire({
             title: "Congratulations!",
