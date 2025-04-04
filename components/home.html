@@ -1,90 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-<div class="d-flex justify-content-center align-items-center vh-100">
-    <div class="row w-75">
-      <!-- Form 1 -->
-      <div class="col-md-6">
-        <div
-          class="card custom"
-          style="
-            background-color: rgba(255, 190, 255, 0.624);
-            border: none;
-            padding: 20px;
-          "
-        >
-          <h2 class="text-center" style="font-size: 30px; color: black">
-            Create a Class
-          </h2>
-          <form>
-            <div class="mb-3">
-              <label for="form1Input1" class="form-label"></label>
-              <input
-                type="text"
-                class="form-control"
-                id="form1Input1"
-                placeholder="Enter text"
-              />
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/solar/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <form class="card col-10 bg-light mt-3 mb-3">
+            <div class="card-body">
+                <div class="row custom">
+                    <div class="col col-lg-6 col-12 mt-5 mb-5">
+                        <div class="card" style="background-color: rgba(255, 190, 255, 0.624); border: none; padding: 10px">
+                            <h1 class="text-center mt-2 mb-5" style="font-size: 40px; color: black">Create a class</h1>
+                            <label for="txtClassName" class="mb-1" style="color:black">Class Name:</label>
+                            <input id="txtClassName" class="form-control mb-3" type="text" placeholder="CSC-1300" style="background-color: white; border-color: black;" aria-label="Input for class name"></input>
+                            <label for="txtGroupName" class="mb-1" style="color:black">Group Name:</label>
+                            <input id="txtGroupName" class="form-control mb-3" type="text" placeholder="Group 1" style="background-color: white; border-color: black;" aria-label="Input for group name"></input>
+                            <h6 style="color:black;">Key:</h6>
+                            <div class="card" style="background-color:White">
+                                <h6 id="txtkey" class="text-center mb-0" style="color:black; padding:9px">--</h6>
+                            </div>
+                            <hr />
+                            <button id="btnLogin" class="btn btn-secondary col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5 mb-2" type="button">Generate Code</button>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6 col-md-12 mt-5 mb-5">
+                        <div class="card" style="background-color: rgba(253, 236, 182, 0.698); border: none; padding: 10px; padding-bottom: 85px;">
+                            <h1 class="text-center mt-2" style="font-size: 40px; color: black">Join a class</h1>
+                            <label for="txtClassCode" class="mb-1" style="color:black; padding-top: 90px;">Enter a Code:</label>
+                            <input id="txtClassCode" class="form-control" type="text" placeholder="ABC123" style="background-color: white; border-color: black;" aria-label="Input for class name"></input>
+                            <hr />
+                            <button id="btnEnter" class="btn btn-secondary col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5 mb-5" type="button">Enter</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-              <label for="form1Input2" class="form-label">email address</label>
-              <input
-                type="email"
-                class="form-control"
-                id="form1Input2"
-                placeholder="Enter email"
-              />
-            </div>
-            <button type="submit" class="btn btn-primary">Create</button>
-          </form>
-        </div>
-      </div>
-
-      <!-- Form 2 -->
-      <div class="col-md-6">
-        <div
-          class="card custom"
-          style="
-            background-color: rgba(253, 236, 182, 0.698);
-            border: none;
-            padding: 20px;
-          "
-        >
-          <h2 class="text-center" style="font-size: 30px; color: black">
-            Join a Class
-          </h2>
-          <form>
-            <div class="mb-3">
-              <label for="form2Input1" class="form-label">Input 1</label>
-              <input
-                type="text"
-                class="form-control"
-                id="form2Input1"
-                placeholder="Enter text"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="form2Input2" class="form-label">Input 2</label>
-              <input
-                type="password"
-                class="form-control"
-                id="form2Input2"
-                placeholder="Enter password"
-              />
-            </div>
-            <button type="submit" class="btn btn-secondary">Join</button>
-          </form>
-        </div>
-      </div>
+        </form>
     </div>
-  </body>
+</body>
 </html>
