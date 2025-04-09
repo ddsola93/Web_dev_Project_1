@@ -85,8 +85,8 @@ document.querySelector('#btnSwapRegistration').addEventListener('click', (event)
         objScript.src = 'js/login.js'; 
         objScript.type = 'text/javascript';
         document.head.appendChild(objScript);
-        document.querySelector('#divLandingPage').innerHTML = '';
-        document.querySelector('#divLandingPage').innerHTML += html;
+        document.querySelector('#divTopLanding').innerHTML = '';
+        document.querySelector('#divTopLanding').innerHTML = html;
         document.querySelector('#divLogin').style.display = 'block';
     })
     .catch(error => console.error("Error fetching chart:", error));

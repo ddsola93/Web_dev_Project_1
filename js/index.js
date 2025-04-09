@@ -6,9 +6,9 @@ document.querySelector('#btnLogin').addEventListener('click', (event) => {
         objScript.src = 'js/login.js'; 
         objScript.type = 'text/javascript';
         document.head.appendChild(objScript);
-        document.querySelector('#divLandingPage').innerHTML += html;
         document.querySelector('#headerLanding').style.display = 'none';
-        document.querySelector('#frmLandingPage').style.display = 'none';
+        document.querySelector('#divTopLanding').innerHTML = '';
+        document.querySelector('#divTopLanding').innerHTML = html;
         document.querySelector('#divLogin').style.display = 'block';
        
     })
@@ -23,9 +23,9 @@ document.querySelector('#btnRegister').addEventListener('click', (event) => {
         objScript.src = 'js/registration.js'; 
         objScript.type = 'text/javascript';
         document.head.appendChild(objScript);
-        document.querySelector('#divLandingPage').innerHTML += html;
         document.querySelector('#headerLanding').style.display = 'none';
-        document.querySelector('#frmLandingPage').style.display = 'none';
+        document.querySelector('#divTopLanding').innerHTML = '';
+        document.querySelector('#divTopLanding').innerHTML = html;
         document.querySelector('#divRegistration').style.display = 'block';
        
     })

@@ -65,6 +65,19 @@ document.querySelector("#btnLogIn").addEventListener("click",(e) => {
             html: "You have successfully signed in",
             icon: 'success'
         });
+        fetch("components/home.html")
+        .then(response => response.text())
+        .then(html => {
+            const objScript = document.createElement('script');
+            objScript.src = 'js/home.js'; 
+            objScript.type = 'text/javascript';
+            document.head.appendChild(objScript);
+            document.querySelector('#divTopLanding').innerHTML = '';
+            document.querySelector('#divTopLanding').innerHTML = html;
+            document.querySelector('#divHome').style.display = 'block';
+        
+        })
+        .catch(error => console.error("Error fetching chart:", error));
     }
 })
 
@@ -77,9 +90,9 @@ document.querySelector('#btnSwapRegister').addEventListener('click', (event) => 
         objScript.src = 'js/registration.js'; 
         objScript.type = 'text/javascript';
         document.head.appendChild(objScript);
-        document.querySelector('#divLandingPage').innerHTML = '';
-        document.querySelector('#divLandingPage').innerHTML += html;
-        document.querySelector('#frmRegister').style.display = 'block';
+        document.querySelector('#divTopLanding').innerHTML = '';
+        document.querySelector('#divTopLanding').innerHTML = html;
+        document.querySelector('#divRegister').style.display = 'block';
        
     })
     .catch(error => console.error("Error fetching chart:", error));
