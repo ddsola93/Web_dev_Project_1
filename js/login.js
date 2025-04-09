@@ -92,7 +92,7 @@ document.querySelector('#btnSwapRegister').addEventListener('click', (event) => 
         document.head.appendChild(objScript);
         document.querySelector('#divTopLanding').innerHTML = '';
         document.querySelector('#divTopLanding').innerHTML = html;
-        document.querySelector('#divRegister').style.display = 'block';
+        document.querySelector('#divRegistration').style.display = 'block';
        
     })
     .catch(error => console.error("Error fetching chart:", error));
