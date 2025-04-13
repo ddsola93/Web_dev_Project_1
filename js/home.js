@@ -82,3 +82,30 @@ document.querySelector('#btnEnterCode').addEventListener('click', (event) => {
         })
     }
 });
+
+// Class code validation for when btnViewClassesInstructor is clicked
+document.querySelector('#btnViewClassesInstructor').addEventListener('click', (event) => {
+    document.querySelector('#divInstructor').innerHTML = ''
+    document.querySelector('#divInstructor').innerHTML = '<div id="divInnerInstructor" class="card" style="background-color: rgba(255, 190, 255, 0.624); border: none; padding: 10px; min-height: 475px;">'
+    document.querySelector('#divInstructor').innerHTML += '</div>'
+    document.querySelector('#divInnerInstructor').innerHTML += '<h1 class="text-center mt-2" style="font-size: 40px; color: black">Class List</h1>'
+    let strDiv = '<div class="card mt-2 mb-2" style="padding: 10px; background-color: rgb(250, 222, 252); border-color: rgb(250, 222, 252)">'
+    strDiv += '<h5 class="text-center mt-2" style="color: black">Class Name</h5>'
+    strDiv += '<h5 class="text-center mb-2" style="color: black">Class Section</h5>'
+    strDiv += '<a href="components/instructorhome.html" class="stretched-link"></a>'
+    document.querySelector('#divInnerInstructor').innerHTML += strDiv + '</div>'
+    document.querySelector('#divInnerInstructor').innerHTML+= '<button id="btnReturnClasses" class="btn btn-secondary col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5 mt-1 mb-2" type="button">Create A Class</button>'
+});
+
+// Class code validation for when btnViewClassesStudent is clicked
+document.querySelector('#btnViewClassesStudent').addEventListener('click', (event) => {
+    document.querySelector('#divStudent').innerHTML = ''
+    document.querySelector('#divStudent').innerHTML = '<div id="divInnerStudent" class="card" style="background-color: rgba(253, 236, 182, 0.698); border: none; padding: 10px; min-height: 475px;">'
+    document.querySelector('#divStudent').innerHTML += '</div>'
+    document.querySelector('#divInnerStudent').innerHTML += '<h1 class="text-center mt-2" style="font-size: 40px; color: black">Class List</h1>'
+    let strDiv = '<div class="card mt-2 mb-2" style="padding: 10px; background-color: rgb(252, 245, 222); border-color: rgb(252, 245, 222)">'
+    strDiv += '<h5 class="text-center mt-2" style="color: black">Class Name</h5>'
+    strDiv += '<h5 class="text-center mb-2" style="color: black">Class Section</h5>'
+    document.querySelector('#divInnerStudent').innerHTML += strDiv + '</div>'
+    document.querySelector('#divInnerStudent').innerHTML += '<button id="btnReturnJoinClasses" class="btn btn-secondary col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5 mt-1 mb-2" type="button">Join A Class</button>'
+});
