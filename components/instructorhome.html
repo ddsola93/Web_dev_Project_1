@@ -13,7 +13,7 @@
             <div id="divSurveys" class="card col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12" style="background-color: white; border: none; padding: 10px; min-height: 400px;">
                 <h1 class="text-center" style="font-size: 40px; color: black">Surveys</h1>
             </div>
-            <button id="btnCreateSurvey" class="btn btn-secondary col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5 mt-2 mb-2" type="button">Create A New Survey</button>
+            <button id="btnCreateNewSurvey" class="btn btn-secondary col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5 mt-2 mb-2" type="button">Create A New Survey</button>
         </form>
     </div>
 </body>
@@ -29,7 +29,7 @@ function generateSurveys () {
         else {
             strDiv = '<div id="divInnerSurvey" class="card mt-1 mb-2" style="background-color: rgb(250, 245, 200); border: none; padding: 10px;">'
         }
-        strDiv += '<a href="components/instructorhome.html" class="stretched-link"></a>'
+        strDiv += '<a href="createsurvey.html" class="stretched-link"></a>'
         strDiv += '<div class="d-flex" style="padding:10px; justify-content: space-evenly">'
         strDiv += '<h6 style="color: black">Survey Name</h6>'
         strDiv += '<h6 style="color: black">75% Complete</h6>'
