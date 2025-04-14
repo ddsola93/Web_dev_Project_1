@@ -1,44 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="d-flex justify-content-center align-items-center vh-100">
-        <div class="row w-75">
-            <!-- Create a Class Option -->
-            <div class="col-md-6 text-center">
-                <div class="card p-4" style="background-color: rgba(255, 190, 255, 0.624);">
-                    <h2 class="mb-4" style="color: black;">Create a Class</h2>
-                    <p style="color: black;">Start a new class and invite others to join.</p>
-                    <!-- Input box for class name -->
-                    <input id="txtClassName" class="form-control mb-3" type="text" placeholder="Enter class name" style="background-color: white; border-color: black;" aria-label="Input for class name">
-                    <!-- Create button -->
-                    <button class="btn btn-primary btn-lg mb-3" onclick="location.href='create_class.html'">Create</button>
-                    <!-- View All Classes button -->
-                    <button class="btn btn-outline-primary btn-lg">View All Classes</button>
-                </div>
-            </div>
-
-            <!-- Join a Class Option -->
-            <div class="col-md-6 text-center">
-                <div class="card p-4" style="background-color: rgba(253, 236, 182, 0.698);">
-                    <h2 class="mb-4" style="color: black;">Join a Class</h2>
-                    <p style="color: black;">Enter a class code to join an existing class.</p>
-                    <!-- Input box for class code -->
-                    <input id="txtClassCode" class="form-control mb-3" type="text" placeholder="Enter class code" style="background-color: white; border-color: black;" aria-label="Input for class code">
-                    <!-- Enter button -->
-                    <button id="btnEnterClass" class="btn btn-secondary btn-lg mb-3">Enter</button>
-                    <!-- View All Classes button -->
-                    <button class="btn btn-outline-secondary btn-lg">View All Classes</button>
-                </div>
-            </div>
+      <div class="row w-75">
+        <!-- Create a Class Option -->
+        <div class="col-md-6 text-center">
+          <div
+            class="card p-4"
+            style="background-color: rgba(255, 190, 255, 0.624)"
+          >
+            <h2 class="mb-4" style="color: black">Create a Class</h2>
+            <p style="color: black">
+              Start a new class and invite others to join.
+            </p>
+            <!-- Input box for class name -->
+            <input
+              id="txtClassName"
+              class="form-control mb-3"
+              type="text"
+              placeholder="Enter class name"
+              style="background-color: white; border-color: black"
+              aria-label="Input for class name"
+            />
+            <!-- Create button -->
+            <button
+              class="btn btn-primary btn-lg mb-3"
+              onclick="location.href='create_class.html'"
+            >
+              Create
+            </button>
+            <!-- View All Classes button -->
+            <button class="btn btn-outline-primary btn-lg">
+              View All Classes
+            </button>
+          </div>
         </div>
+
+        <!-- Join a Class Option -->
+        <div class="col-md-6 text-center">
+          <div
+            class="card p-4"
+            style="background-color: rgba(253, 236, 182, 0.698)"
+          >
+            <h2 class="mb-4" style="color: black">Join a Class</h2>
+            <p style="color: black">Enter a code:</p>
+            <!-- Input box for class code -->
+            <input
+              id="txtClassCode"
+              class="form-control mb-3"
+              type="text"
+              placeholder="Enter class code"
+              style="background-color: white; border-color: black"
+              aria-label="Input for class code"
+            />
+            <!-- Enter button -->
+            <button id="btnEnterClass" class="btn btn-secondary btn-lg mb-3">
+              Enter
+            </button>
+            <!-- View All Classes button -->
+            <button class="btn btn-outline-secondary btn-lg">
+              View All Classes
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
