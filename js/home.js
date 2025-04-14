@@ -92,9 +92,24 @@ document.querySelector('#btnViewClassesInstructor').addEventListener('click', (e
     let strDiv = '<div class="card mt-2 mb-2" style="padding: 10px; background-color: rgb(250, 222, 252); border-color: rgb(250, 222, 252)">'
     strDiv += '<h5 class="text-center mt-2" style="color: black">Class Name</h5>'
     strDiv += '<h5 class="text-center mb-2" style="color: black">Class Section</h5>'
-    strDiv += '<a href="components/instructorhome.html" class="stretched-link"></a>'
+    strDiv += '<a id="loadInstructorHome" class="stretched-link"></a>'
     document.querySelector('#divInnerInstructor').innerHTML += strDiv + '</div>'
     document.querySelector('#divInnerInstructor').innerHTML+= '<button id="btnReturnClasses" class="btn btn-secondary col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5 mt-1 mb-2" type="button">Create A Class</button>'
+    document.querySelector('#loadInstructorHome').addEventListener('click', (event) => {
+        fetch("components/instructorhome.html")
+        .then(response => response.text())
+        .then(html => {
+            const objScript = document.createElement('script');
+            objScript.src = 'js/instructorhome.js'; 
+            objScript.type = 'text/javascript';
+            document.head.appendChild(objScript);
+            document.querySelector('#divTopLanding').innerHTML = '';
+            document.querySelector('#divTopLanding').innerHTML = html;
+            // document.querySelector('#divinstructorhome').style.display = 'block';
+           
+        })
+        .catch(error => console.error("Error fetching chart:", error));
+    });
 });
 
 // Class code validation for when btnViewClassesStudent is clicked

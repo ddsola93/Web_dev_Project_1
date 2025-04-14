@@ -1,12 +1,12 @@
-    let xArray = ["Completed", "Incomplete"];
-    let yArray = [75, 25];
+    xArray = ["Completed", "Incomplete"];
+    yArray = [75, 25];
 
-    let data = [{
+    data = [{
         labels: xArray,
         values: yArray,
         type: "pie"
     }];
-    let layout = {
+    layout = {
         height: 200,
         width: 250,
         margin: { t: 0, b: 0, l: 0, r: 0 },
@@ -19,8 +19,8 @@
     };
     Plotly.newPlot("myPlot", data, layout);
 
-    let strAnswer = ''
-    let strLikertQuestion = 'How do you like this course?'
+    strAnswer = ''
+    strLikertQuestion = 'How do you like this course?'
     strAnswer += `<p class="mb-1" style="color:black; font-size: 25px;">${strLikertQuestion}</p>`
     strAnswer += '<div class="d-flex align-items-center flex-wrap mb-2" style="gap: 20px; justify-content: space-between;">'
     strAnswer += '<div class="d-flex align-items-center flex-grow-1 justify-content-between" style="min-width: 0;">'
@@ -98,3 +98,17 @@
     strLikertQuestion = 'What has been your favorite part of this course so far?'
     document.querySelector('#divSurveys').innerHTML += `<p class="mb-1" style="color:black; font-size: 25px;">${strLikertQuestion}</p>`
     document.querySelector('#divSurveys').innerHTML += '<textarea id="txtResponseShortAnswer" rows="5" mb-4" cols="40" wrap="soft" style="font-size: 20px;"  placeholder="Enter your response here" aria-label="Input for Short Answer"></textarea>'
+
+    document.querySelector('#btnReturnToClass').addEventListener('click', (event) => {
+        fetch("components/instructorhome.html")
+        .then(response => response.text())
+        .then(html => {
+            const objScript = document.createElement('script');
+            objScript.src = 'js/instructorhome.js'; 
+            objScript.type = 'text/javascript';
+            document.head.appendChild(objScript);
+            document.querySelector('#divTopLanding').innerHTML = '';
+            document.querySelector('#divTopLanding').innerHTML = html;       
+        })
+        .catch(error => console.error("Error fetching chart:", error));
+    });
