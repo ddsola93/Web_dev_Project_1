@@ -30,7 +30,8 @@
             </div>
             <div id="divCreateQuestion">
             </div>
-            <button id="btnCreateSurvey" class="btn btn-secondary mt-3 col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5 mb-3" type="button">Create Survey</button>
+            <button id="btnCreateSurvey" class="btn btn-secondary mt-3 col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5 mb-1" type="button">Create Survey</button>
+            <button id="btnReturnToDashboard" class="btn btn-secondary col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5 mb-3" type="button">Return To Class</button>
         </form>
     </div>
 </body>
@@ -212,6 +213,9 @@ document.querySelector('#btnCreateNewQuestion').addEventListener('click', (event
     }
 });
 document.querySelector('#btnCreateSurvey').addEventListener('click', (event) => {
+    window.location.href = 'instructorhome.html';
+});
+document.querySelector('#btnReturnToDashboard').addEventListener('click', (event) => {
     window.location.href = 'instructorhome.html';
 });
 </script>
