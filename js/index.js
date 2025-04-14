@@ -1,3 +1,4 @@
+
 document.querySelector('#btnLogin').addEventListener('click', (event) => {
     fetch("components/login.html")
     .then(response => response.text())
@@ -31,3 +32,7 @@ document.querySelector('#btnRegister').addEventListener('click', (event) => {
     })
     .catch(error => console.error("Error fetching chart:", error));
 });
+
+
+// This is a simple alert to show that the frontend is working
+alert("Hello from the frontend!");
