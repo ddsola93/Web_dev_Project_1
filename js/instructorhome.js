@@ -1,62 +1,64 @@
-function generateSurveys () {
-    count = 0
-    for (let i = 0; i < 5; i++) {
-        let strDiv = ''
-        if(count % 2 == 0) {
-            strDiv = '<div id="divInnerSurvey" class="card mt-1 mb-2" style="background-color: rgb(250, 210, 252); border: none; padding: 10px;">'
-        }
-        else {
-            strDiv = '<div id="divInnerSurvey" class="card mt-1 mb-2" style="background-color: rgb(250, 245, 200); border: none; padding: 10px;">'
-        }
-        strDiv += '<a id="loadsurveystatus" class="stretched-link"></a>'
-        strDiv += '<div class="d-flex" style="padding:10px; justify-content: space-evenly">'
-        strDiv += '<h6 style="color: black">Survey Name</h6>'
-        strDiv += '<h6 style="color: black">75% Complete</h6>'
-        strDiv += '</div>'
-        document.querySelector('#divSurveys').innerHTML += strDiv
-        count++
+// Class name validation and code creation for when btnGenerateCode is clicked
+document.querySelector('#btnGenerateCode').addEventListener('click', (event) => {
+    // Grabs the values inputed by the user
+    let strClassName = document.querySelector("#txtClassName").value
+    let strGroupName = document.querySelector("#txtGroupName").value
+
+    let blnError = false
+    let strMessage = ""
+
+    // Checks to see if a class name was entered
+    if(strClassName.length < 1){
+        blnError = true
+        strMessage += '<p class="mb-0 mt-0">A code cannot be generated without a class name</p>'
     }
-}
-generateSurveys()
 
-document.querySelector('#btnCreateNewSurvey').addEventListener('click', (event) => {
-    fetch("components/createsurvey.html")
-    .then(response => response.text())
-    .then(html => {
-        const objScript = document.createElement('script');
-        objScript.src = 'js/createsurvey.js'; 
-        objScript.type = 'text/javascript';
-        document.head.appendChild(objScript);
-        document.querySelector('#divTopLanding').innerHTML = '';
-        document.querySelector('#divTopLanding').innerHTML = html;       
-    })
-    .catch(error => console.error("Error fetching chart:", error));
+    // Throws an error if no class name was entered
+    if(blnError){
+        Swal.fire({
+            title: "Oh no, you have an error!",
+            html: strMessage,
+            icon: 'error'
+        });
+    }
+    // Creates a code and confirms code is created
+    else {
+        Swal.fire({
+            position: "middle",
+            icon:"success",
+            title:"Generating code",
+            showConfirmButton: false,
+            timer: 1000
+        })
+
+        let x = 0;
+        let code =''
+
+        // Creates a random number of length 6
+        while ( x < 6) {
+            code += Math.floor(Math.random() * 10);
+            x++
+        }
+
+        // *Add check to see if class or code is already in the database*
+        
+        // Outputs the code to the user
+        document.querySelector('#txtkey').innerHTML = '<h6 id="txtkey" class="text-left mb-0" style="color:black;">' + code +'</h6>'
+    }
 });
 
-document.querySelector('#loadsurveystatus').addEventListener('click', (event) => {
-    fetch("components/surveystatus.html")
+// Class code validation for when btnViewClassesInstructor is clicked
+document.querySelector('#btnViewClassesInstructor').addEventListener('click', (event) => {
+    fetch("components/instructorviewclasses.html")
     .then(response => response.text())
     .then(html => {
         const objScript = document.createElement('script');
-        objScript.src = 'js/surveystatus.js'; 
+        objScript.src = 'js/instructorviewclasses.js'; 
         objScript.type = 'text/javascript';
         document.head.appendChild(objScript);
         document.querySelector('#divTopLanding').innerHTML = '';
-        document.querySelector('#divTopLanding').innerHTML = html;       
-    })
-    .catch(error => console.error("Error fetching chart:", error));
-});
-
-document.querySelector('#btnReturnToDashboard').addEventListener('click', (event) => {
-    fetch("components/home.html")
-    .then(response => response.text())
-    .then(html => {
-        const objScript = document.createElement('script');
-        objScript.src = 'js/home.js'; 
-        objScript.type = 'text/javascript';
-        document.head.appendChild(objScript);
-        document.querySelector('#divTopLanding').innerHTML = '';
-        document.querySelector('#divTopLanding').innerHTML = html;       
+        document.querySelector('#divTopLanding').innerHTML = html;
+           
     })
     .catch(error => console.error("Error fetching chart:", error));
 });
