@@ -55,3 +55,16 @@ function validateForm(submissionType) {
         text: `Your survey has been submitted as ${submissionType}.`,
     });
 }
+
+// Handle navigation to the Submissions page
+document.addEventListener('DOMContentLoaded', () => {
+    const submissionsButton = document.querySelector('#btnSubmissions');
+    if (submissionsButton) {
+        submissionsButton.addEventListener('click', () => {
+            // Navigate to the studentsurvey.html page
+            window.location.href = '/components/studentsurvey.html';
+        });
+    } else {
+        console.error('Submissions button (#btnSubmissions) not found in the DOM.');
+    }
+});
