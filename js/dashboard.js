@@ -8,4 +8,4 @@ document.querySelector('#btnJoinClass').addEventListener('click', () => {
 document.querySelector('#btnCreateClass').addEventListener('click', () => {
     // Redirect to CreateClass.html (or any other page for creating a class)
     window.location.href = 'CreateClass.html';
-}
+});
