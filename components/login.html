@@ -17,11 +17,17 @@
 
                     <!-- Take in user input for login -->
                     <hr />
+                    <label for="cboStatus" class="mb-1">Choose Your Status: <i class="bi bi-asterisk" style="color:red; font-size: 13px;"></i></label>
+                    <select id="cboStatus" class="form-control mt-1 mb-2" placeholder="Choose Your Status" aria-label="Choose your Status">
+                        <option value="">Choose Your Status</option>
+                        <option value="student">Student</option>
+                        <option value="instructor">Instructor</option>
+                    </select>
                     <label for="txtEmail" class="mb-1">Email Address: <i class="bi bi-asterisk" style="color:red; font-size: 13px;"></i></label>
                     <input id="txtEmail" class="form-control mb-3" type="text" placeholder="jdoe42@tntech.edu" aria-label="Input for email" required></input>
                     <label for="txtPassword" class="mb-1">Password: <i class="bi bi-asterisk" style="color:red; font-size: 13px;"></i></label>
                     <input id="txtPassword" class="form-control" type="password" placeholder="Password" aria-label="Input for password" required></input>
-                    <button id="btnForgotPassword" class="btn btn-link" type="button"><u>Forgot Password?</u></button>
+                    <button id="btnForgotPassword" class="btn btn-link" type="button"><u>Forgot Password?</u></button><br>
 
                     <!-- Buttons for login and swich to registration form -->
                     <hr />

@@ -33,6 +33,7 @@ document.querySelector("#btnLogIn").addEventListener("click",(e) => {
     // Grabs the values inputed by the user
     let strEmail = document.querySelector("#txtEmail").value
     let strPassword = document.querySelector("#txtPassword").value
+    let strStatus = document.querySelector("#cboStatus").value
 
     let blnError = false
     let strMessage = ""
@@ -47,6 +48,12 @@ document.querySelector("#btnLogIn").addEventListener("click",(e) => {
     if(strPassword.length < 1){
         blnError = true
         strMessage += '<p class="mb-0 mt-0">Password must be valid</p>'
+    }
+
+    // Checks to see if the user selected a status
+    if(strStatus == ""){
+        blnError = true
+        strMessage += '<p class="mb-0 mt-0">You must select a status</p>'
     }
 
     // If there is an error show the errors
@@ -65,19 +72,36 @@ document.querySelector("#btnLogIn").addEventListener("click",(e) => {
             html: "You have successfully signed in",
             icon: 'success'
         });
-        fetch("components/home.html")
-        .then(response => response.text())
-        .then(html => {
-            const objScript = document.createElement('script');
-            objScript.src = 'js/home.js'; 
-            objScript.type = 'text/javascript';
-            document.head.appendChild(objScript);
-            document.querySelector('#divTopLanding').innerHTML = '';
-            document.querySelector('#divTopLanding').innerHTML = html;
-            document.querySelector('#divHome').style.display = 'block';
-        
-        })
-        .catch(error => console.error("Error fetching chart:", error));
+        if(strStatus == "instructor") {
+            fetch("components/instructorhome.html")
+            .then(response => response.text())
+            .then(html => {
+                const objScript = document.createElement('script');
+                objScript.src = 'js/instructorhome.js'; 
+                objScript.type = 'text/javascript';
+                document.head.appendChild(objScript);
+                document.querySelector('#divTopLanding').innerHTML = '';
+                document.querySelector('#divTopLanding').innerHTML = html;
+                document.querySelector('#divHome').style.display = 'block';
+            
+            })
+            .catch(error => console.error("Error fetching chart:", error));
+        }
+        else {
+            fetch("components/studenthome.html")
+            .then(response => response.text())
+            .then(html => {
+                const objScript = document.createElement('script');
+                objScript.src = 'js/studenthome.js'; 
+                objScript.type = 'text/javascript';
+                document.head.appendChild(objScript);
+                document.querySelector('#divTopLanding').innerHTML = '';
+                document.querySelector('#divTopLanding').innerHTML = html;
+                document.querySelector('#divHome').style.display = 'block';
+            
+            })
+            .catch(error => console.error("Error fetching chart:", error));
+        }
     }
 })
 
