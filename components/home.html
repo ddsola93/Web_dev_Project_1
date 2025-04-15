@@ -1,32 +1,51 @@
+<!-- Main container for the home page -->
 <div class="d-flex justify-content-center align-items-center" id="divHome" style="min-height: 100vh;">
+    <!-- Form container for instructor and student sections -->
     <form class="card col-10 bg-light mt-3 mb-3" id="frmHome" style="min-height: 500px;">
         <div class="card-body">
             <div class="row custom">
+                <!-- Instructor Section -->
                 <div class="col col-lg-6 col-12 mt-2 mb-2">
                     <div id="divInstructor">
                         <div id="divInnerInstructor" class="card" style="background-color: rgba(255, 190, 255, 0.624); border: none; padding: 10px">
+                            <!-- Title for instructor section -->
                             <h1 class="text-center mt-2 mb-5" style="font-size: 40px; color: black">Create a class</h1>
+                            
+                            <!-- Input for class name -->
                             <label for="txtClassName" class="mb-1" style="color:black">Class Name:</label>
                             <input id="txtClassName" class="form-control mb-3" type="text" placeholder="CSC-1300" style="background-color: white; border-color: black;" aria-label="Input for class name"></input>
+                            
+                            <!-- Input for group name -->
                             <label for="txtGroupName" class="mb-1" style="color:black">Group Name:</label>
                             <input id="txtGroupName" class="form-control mb-3" type="text" placeholder="Group 1" style="background-color: white; border-color: black;" aria-label="Input for group name"></input>
+                            
+                            <!-- Display for generated key -->
                             <h6 style="color:black;">Key:</h6>
                             <div class="card" style="background-color:White">
                                 <h6 id="txtkey" class="text-center mb-0" style="color:black; padding:9px">--</h6>
                             </div>
                             <hr />
+                            
+                            <!-- Buttons for instructor actions -->
                             <button id="btnGenerateCode" class="btn btn-secondary col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5" type="button">Generate Code</button>
                             <button id="btnViewClassesInstructor" class="btn btn-secondary col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5 mt-1 mb-2" type="button">View All Classes</button>
                         </div>
                     </div>
                 </div>
+
+                <!-- Student Section -->
                 <div class="col col-lg-6 col-md-12 mt-2 mb-2">
                     <div id="divStudent">
                         <div id="divInnerStudent" class="card" style="background-color: rgba(253, 236, 182, 0.698); border: none; padding: 10px; padding-bottom: 85px;">
+                            <!-- Title for student section -->
                             <h1 class="text-center mt-2" style="font-size: 40px; color: black">Join a class</h1>
+                            
+                            <!-- Input for class code -->
                             <label for="txtClassCode" class="mb-1" style="color:black; padding-top: 90px;">Enter a Code:</label>
                             <input id="txtClassCode" class="form-control" type="text" placeholder="ABC123" style="background-color: white; border-color: black;" aria-label="Input for class name"></input>
                             <hr />
+                            
+                            <!-- Buttons for student actions -->
                             <button id="btnEnterCode" class="btn btn-secondary col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5" type="button">Enter</button>
                             <button id="btnViewClassesStudent" class="btn btn-secondary col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 col-5 mt-1 mb-5" type="button">View All Classes</button>
                         </div>
