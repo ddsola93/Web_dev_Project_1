@@ -1,9 +1,9 @@
 document.querySelector('#loadClassHome').addEventListener('click', (event) => {
-    fetch("components/allSubmission_students.html")
+    fetch("components/studentdashboard.html")
     .then(response => response.text())
     .then(html => {
         const objScript = document.createElement('script');
-        objScript.src = 'js/instructorhome.js'; 
+        objScript.src = 'js/studentdashboard.js'; 
         objScript.type = 'text/javascript';
         document.head.appendChild(objScript);
         document.querySelector('#divTopLanding').innerHTML = '';
